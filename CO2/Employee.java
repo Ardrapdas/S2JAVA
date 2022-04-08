@@ -1,0 +1,71 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package employee;
+import java.util.Scanner;
+/**
+ *
+ * @author sjcet
+ */
+public class Employee {
+    int eno;
+	String ename;
+	double esalary;
+	void getdata()
+	{
+            Scanner sc=new Scanner(System.in);
+		
+		System.out.println("enter id ");
+		eno=sc.nextInt();
+		System.out.println("enter name");
+		ename=sc.next();
+		System.out.println("enter salary");
+		esalary=sc.nextDouble();
+        }
+        void display()
+        {
+            System.out.println("employee id is : "+ eno);
+		System.out.println("employee name is : "+ ename);
+		System.out.println("employee salary is : "+ esalary);
+	
+        }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner sc1=new Scanner(System.in);
+		int i,n,c,f=0;
+		System.out.println("enter the number of employees");
+		n=sc1.nextInt();
+		Employee e[]=new Employee[n];
+		for(i=0;i<n;i++) {
+			e[i]=new Employee();
+			e[i].getdata();
+        // TODO code application logic here
+                }
+                System.out.println("Employee details are :\n");
+		for(i=0;i<n;i++) {
+			e[i].display();
+                }
+                System.out.println("Enter the id to be search");
+		c=sc1.nextInt();
+	for(i=0;i<n;i++) {
+		if(c==e[i].eno) {
+			f=1;
+			break;
+		}
+        }
+        if(f==1) {
+		System.out.println("details of employee is ");
+		e[i].display();
+	}
+	else
+		System.out.println("item isnt found");	
+
+	}
+}
+    
+    
+
